@@ -21,5 +21,6 @@ describe Biblio do
         end
         it "Tiene que existir un numero de edicion" do
             @obj1.edicion.should eq('4')
+        end
     end
 end
