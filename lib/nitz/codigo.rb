@@ -39,6 +39,6 @@ class Biblio
     end
     
     def to_s
-    "Autor: #@autor, Título: #@titulo, Serie: #@serie, Editorial: #@editorial, #@edicion Edición, Fecha de Publicación: #@fecha y ISBN: #@isbn"
+    "Autor: #@autor, Titulo: #@titulo, Serie: #@serie, Editorial: #@editorial, #@edicion Edicion, Fecha de Publicacion: #@fecha y ISBN: #@isbn"
     end
 end
