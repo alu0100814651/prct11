@@ -9,35 +9,36 @@ class Biblio
         @fecha = c
         @isbn = d
     end
-     def obtenerautores
+    
+    def obtenautor
      @autor
     end
     
-    def obtenertitulo
+    def obtentitulo
      @titulo
     end
     
-    def obtenerserie
+    def obtenserie
      @serie
     end
     
-    def obtenereditorial
+    def obteneditorial
      @editorial
     end
     
-    def obteneredicion
+    def obtenedicion
      @edicion
     end
     
-    def obtenerfecha
+    def obtenfecha
      @fecha
     end
     
-    def obtenerisbn
+    def obtenisbn
      @isbn
     end
     
     def to_s
-    "Autores: #@autores, Título: #@titulo, Serie: #@serie, Editorial: #@editorial, #@edicion Edición, Fecha de Publicación: #@fdp y ISBN: #@isbn"
+    "Autor: #@autor, Título: #@titulo, Serie: #@serie, Editorial: #@editorial, #@edicion Edición, Fecha de Publicación: #@fecha y ISBN: #@isbn"
     end
 end
