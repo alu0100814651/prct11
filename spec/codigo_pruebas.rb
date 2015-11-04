@@ -3,7 +3,7 @@ require 'nitz/codigo'
 
 describe Biblio do
     before :each do
-        @obj1 = Biblio.new('Dave Thomas', 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', '(The Facets of Ruby)', 'Pragmatic Bookshelf;', '4')
+        @obj1 = Biblio.new('Dave Thomas', 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'The Facets of Ruby', 'Pragmatic Bookshelf;', '4', 'July 7, 2013')
     end
     
     describe "Primer Conjunto de Pruebas" do
@@ -14,13 +14,16 @@ describe Biblio do
             @obj1.titulo.should eq('Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide')
         end
         it "Tiene que existir o no una serie" do
-            @obj1.serie.should eq('(The Facets of Ruby)')
+            @obj1.serie.should eq('The Facets of Ruby')
         end
         it "Tiene que existir una editorial" do
             @obj1.editorial.should eq('Pragmatic Bookshelf;')
         end
         it "Tiene que existir un numero de edicion" do
             @obj1.edicion.should eq('4')
+        end
+        it "Tiene que existir una fecha de publicacion" do
+            @obj1.fecha.should eq('July 7, 2013')
         end
     end
 end
