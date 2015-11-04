@@ -9,4 +9,35 @@ class Biblio
         @fecha = c
         @isbn = d
     end
+     def obtenerautores
+     @autor
+    end
+    
+    def obtenertitulo
+     @titulo
+    end
+    
+    def obtenerserie
+     @serie
+    end
+    
+    def obtenereditorial
+     @editorial
+    end
+    
+    def obteneredicion
+     @edicion
+    end
+    
+    def obtenerfecha
+     @fecha
+    end
+    
+    def obtenerisbn
+     @isbn
+    end
+    
+    def to_s
+    "Autores: #@autores, Título: #@titulo, Serie: #@serie, Editorial: #@editorial, #@edicion Edición, Fecha de Publicación: #@fdp y ISBN: #@isbn"
+    end
 end
