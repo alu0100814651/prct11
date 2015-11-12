@@ -74,6 +74,7 @@ end
         @cola1 = Cola.new()
         @cola2 = Cola.new()
         @cola3 = Cola.new()
+        @cola4 = Cola.new()
     end
     
     describe "Creamos una cola" do
@@ -86,19 +87,19 @@ end
     end
     
     describe "Vemos si la cola está vacía" do
-        it "Debe existir el método 'vacía'" do
-            expect(@cola2.vacia).to eq(true)
+        it "Debe existir el método vacía" do
+            expect(@cola4.vacia).to eq(true)
         end
     end
     
     describe "Insertar elemento en cola" do
-        it "Debe existir este método" do
+        it "Debe existir el método insertar" do
             expect(@cola2.insertar(@bib1)).to eq(true)
         end
     end
     
     describe "Extraer de la cola" do
-        it "Debe existir este método" do
+        it "Debe existir el método extraer" do
             expect(@cola2.insertar(@bib1)).to eq(true)
             expect(@cola2.extraer).to eq(@bib1)
         end
