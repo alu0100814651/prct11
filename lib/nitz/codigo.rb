@@ -72,3 +72,13 @@ class Periodico < Biblio
     end
     
 end
+
+class Electronico < Biblio
+    attr_reader :http
+    
+    def initialize (x, y, z, a, b, c, d)
+        super(x, y, z, a, b, c, d)
+        @http=d
+    end
+    
+end

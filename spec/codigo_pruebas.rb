@@ -185,3 +185,24 @@ describe Periodico do
         end
     end
 end
+
+describe Electronico do
+    before :all do
+        @electronico = Electronico.new('David Chelimsky', 'The RSpecBook: Behaviour Driven Development with RSpec, Cucumber, and Friends', 'The Facets of Ruby', 'Pragmatic Bookshelf', '1', 'December 25 2010', ['1934356379','9781934356371'])
+    end
+    
+    describe "Pruebas de Elextrónico" do
+        it "Instancia" do
+           expect(@electronico.instance_of?Electronico).to eq(true)
+        end
+        it "Bibliografia" do
+            expect(@electronico.is_a?Biblio).to eq(true)
+        end
+        it "Object" do
+            expect(@electronico.is_a?Object).to eq(true)
+        end
+        it "BasicObject" do
+            expect(@electronico.is_a?BasicObject).to eq(true)
+        end
+    end
+end
