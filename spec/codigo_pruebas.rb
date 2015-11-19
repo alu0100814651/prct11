@@ -128,12 +128,12 @@ describe Libro do
         @lib1 = Libro.new('David Chelimsky', 'The RSpecBook: Behaviour Driven Development with RSpec, Cucumber, and Friends', 'The Facets of Ruby', 'Pragmatic Bookshelf', '1', 'December 25 2010', ['1934356379','9781934356371'])
     end
     
-    describe "/ Pruebas " do
+    describe "Pruebas" do
         it "Instancia" do
            expect(@lib1.instance_of?Libro).to eq(true)
         end
         it "Bibliografia" do
-            expect(@lib1.is_a?Bibliografia).to eq(true)
+            expect(@lib1.is_a?Biblio).to eq(true)
         end
         it "Object" do
             expect(@lib1.is_a?Object).to eq(true)
@@ -141,8 +141,26 @@ describe Libro do
         it "BasicObject" do
             expect(@lib1.is_a?BasicObject).to eq(true)
         end
-        it "Responder a metodo de madre" do
-            expect(@lib1.respond_to?(:x)).to eq(true)
+    end
+end
+
+describe Revista do
+    before :all do
+        @revista = Revista.new('David Chelimsky', 'The RSpecBook: Behaviour Driven Development with RSpec, Cucumber, and Friends', 'The Facets of Ruby', 'Pragmatic Bookshelf', '1', 'December 25 2010', ['1934356379','9781934356371'])
+    end
+    
+    describe "Pruebas" do
+        it "Instancia" do
+           expect(@lib1.instance_of?Revista).to eq(true)
+        end
+        it "Bibliografia" do
+            expect(@lib1.is_a?Biblio).to eq(true)
+        end
+        it "Object" do
+            expect(@lib1.is_a?Object).to eq(true)
+        end
+        it "BasicObject" do
+            expect(@lib1.is_a?BasicObject).to eq(true)
         end
     end
 end

@@ -42,3 +42,23 @@ class Biblio
     "Autor: #@autor, Titulo: #@titulo, Serie: #@serie, Editorial: #@editorial, #@edicion Edicion, Fecha de Publicacion: #@fecha y ISBN: #@isbn"
     end
 end
+
+class Libro < Biblio
+    attr_reader :isbnlibro
+    
+    def initialize (x, y, z, a, b, c, d)
+        super(x, y, z, a, b, c, d)
+        @isbnlibro=d
+    end
+    
+end
+
+class Revista < Biblio
+    attr_reader :issn
+    
+    def initialize (x, y, z, a, b, c, d)
+        super(x, y, z, a, b, c, d)
+        @issn=d
+    end
+    
+end
