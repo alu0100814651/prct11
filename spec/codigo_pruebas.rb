@@ -164,3 +164,24 @@ describe Revista do
         end
     end
 end
+
+describe Periodico do
+    before :all do
+        @periodico = Periodico.new('David Chelimsky', 'The RSpecBook: Behaviour Driven Development with RSpec, Cucumber, and Friends', 'The Facets of Ruby', 'Pragmatic Bookshelf', '1', 'December 25 2010', ['1934356379','9781934356371'])
+    end
+    
+    describe "Pruebas de Periódico" do
+        it "Instancia" do
+           expect(@periodico.instance_of?Periodico).to eq(true)
+        end
+        it "Bibliografia" do
+            expect(@periodico.is_a?Biblio).to eq(true)
+        end
+        it "Object" do
+            expect(@periodico.is_a?Object).to eq(true)
+        end
+        it "BasicObject" do
+            expect(@periodico.is_a?BasicObject).to eq(true)
+        end
+    end
+end

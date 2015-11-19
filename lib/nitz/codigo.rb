@@ -62,3 +62,13 @@ class Revista < Biblio
     end
     
 end
+
+class Periodico < Biblio
+    attr_reader :column
+    
+    def initialize (x, y, z, a, b, c, d)
+        super(x, y, z, a, b, c, d)
+        @column=d
+    end
+    
+end
