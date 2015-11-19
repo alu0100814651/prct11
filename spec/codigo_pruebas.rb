@@ -128,7 +128,7 @@ describe Libro do
         @lib1 = Libro.new('David Chelimsky', 'The RSpecBook: Behaviour Driven Development with RSpec, Cucumber, and Friends', 'The Facets of Ruby', 'Pragmatic Bookshelf', '1', 'December 25 2010', ['1934356379','9781934356371'])
     end
     
-    describe "Pruebas" do
+    describe "Pruebas de Libro" do
         it "Instancia" do
            expect(@lib1.instance_of?Libro).to eq(true)
         end
@@ -149,18 +149,18 @@ describe Revista do
         @revista = Revista.new('David Chelimsky', 'The RSpecBook: Behaviour Driven Development with RSpec, Cucumber, and Friends', 'The Facets of Ruby', 'Pragmatic Bookshelf', '1', 'December 25 2010', ['1934356379','9781934356371'])
     end
     
-    describe "Pruebas" do
+    describe "Pruebas de Revista" do
         it "Instancia" do
-           expect(@lib1.instance_of?Revista).to eq(true)
+           expect(@revista.instance_of?Revista).to eq(true)
         end
         it "Bibliografia" do
-            expect(@lib1.is_a?Biblio).to eq(true)
+            expect(@revista.is_a?Biblio).to eq(true)
         end
         it "Object" do
-            expect(@lib1.is_a?Object).to eq(true)
+            expect(@revista.is_a?Object).to eq(true)
         end
         it "BasicObject" do
-            expect(@lib1.is_a?BasicObject).to eq(true)
+            expect(@revista.is_a?BasicObject).to eq(true)
         end
     end
 end
