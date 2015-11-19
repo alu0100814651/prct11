@@ -1,6 +1,6 @@
 require 'spec_helper'
 require 'nitz/codigo'
-require 'nitz/libreria_cola'
+require 'nitz/libreria_lista'
 
 describe Biblio do
     before :each do
@@ -33,7 +33,7 @@ describe Biblio do
     
     
     describe "Metodos" do
-      
+  
     it "Existe un metodo para obtener el autor" do 
          @obj1.obtenautor.should == ('Dave Thomas')
      end
@@ -53,7 +53,7 @@ describe Biblio do
          @obj1.obtenfecha.should == ('July 7, 2013')
      end
      it "Existe un metodo para obtener el ISBN" do 
-         @obj1.obtenisbn.should == (['ISBN-13: 978-1937785499', 'ISBN-10: 1937785491'])
+     @obj1.obtenisbn.should == (['ISBN-13: 978-1937785499', 'ISBN-10: 1937785491'])
      end
      it "Existe un metodo para obtener la referencia formateada" do
          @obj1.to_s.should == ("Autor: Dave Thomas, Titulo: Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide, Serie: The Facets of Ruby, Editorial: Pragmatic Bookshelf, 4 Edicion, Fecha de Publicacion: July 7, 2013 y ISBN: [\"ISBN-13: 978-1937785499\", \"ISBN-10: 1937785491\"]")
@@ -61,75 +61,88 @@ describe Biblio do
   end
 end
 
-  describe Cola do
-    before :all do
+describe Lista do
+    before :each do
         
-        #Ejemplos 
         @bib1 = Biblio.new('Dave Thomas', 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'The Facets of Ruby', 'Pragmatic Bookshelf', '4', 'July 7 2013', ['9781937785499', '1937785491'])
         @bib2 = Biblio.new('Scott Chacon', 'Pro Git 2009th Edition', 'Pro', 'Apress', '2009', 'August 27 2009', ['9781430218333','1430218339'])
         @bib3 = Biblio.new('David Flanagan', 'The Ruby', 'Programming Language', 'O’Reilly Media', '1', 'February 4 2008', ['0596516177','9780596516178'])
         @bib4 = Biblio.new('David Chelimsky', 'The RSpecBook: Behaviour Driven Development with RSpec, Cucumber, and Friends', 'The Facets of Ruby', 'Pragmatic Bookshelf', '1', 'December 25 2010', ['1934356379','9781934356371'])
         @bib5 = Biblio.new('Richard E. Silverman','Git', 'Pocket Guide', 'O’Reilly Media', '1', 'August 2 2013', ['1449325866','9781449325862'])
         
-        @cola1 = Cola.new()
-        @cola2 = Cola.new()
-        @cola3 = Cola.new()
-        @cola4 = Cola.new()
+        @l1 = Lista.new()
+        @l2 = Lista.new()
+        @l3 = Lista.new()
     end
     
-    describe "Creamos una cola" do
+    describe "Creamos una lista" do
         it "El nodo inicial es nil" do
-            expect(@cola1.start).to eq(nil)
+            expect(@l1.start).to eq(nil)
         end
+        
         it "El nodo final tmb es nil" do
-            expect(@cola1.finish).to eq(nil)
+            expect(@l1.finish).to eq(nil)
         end
-    end
-    
-    describe "Vemos si la cola está vacía" do
+
         it "Debe existir el método vacía" do
-            expect(@cola4.vacia).to eq(true)
+            expect(@l1.vacia).to eq(true)
         end
-    end
-    
-    describe "Insertar elemento en cola" do
+
         it "Debe existir el método insertar" do
-            expect(@cola2.insertar(@bib1)).to eq(true)
+            expect(@l1.insertarstart(@bib1)).to eq(true)
         end
-    end
-    
-    describe "Extraer de la cola" do
+
         it "Debe existir el método extraer" do
-            expect(@cola2.insertar(@bib1)).to eq(true)
-            expect(@cola2.extraer).to eq(@bib1)
+            expect(@l2.insertarstart(@bib1)).to eq(true)
+            expect(@l2.extraerstart).to eq(@bib1)
+        end
+    
+        it "Podemos insertar mas de un elemento" do
+            
+            expect(@l1.insertarstart(@bib1)).to eq(true)
+            expect(@l1.insertarstart(@bib2)).to eq(true)
+            expect(@l1.insertarstart(@bib3)).to eq(true)
+            expect(@l1.insertarstart(@bib4)).to eq(true)
+            expect(@l1.insertarstart(@bib5)).to eq(true)
+        end
+    
+        it "Podemos extraer mas de un elemento" do
+            
+            expect(@l3.insertarfinish(@bib1)).to eq(true)
+            expect(@l3.insertarfinish(@bib2)).to eq(true)
+            expect(@l3.insertarfinish(@bib3)).to eq(true)
+            expect(@l3.insertarfinish(@bib4)).to eq(true)
+            expect(@l3.insertarfinish(@bib5)).to eq(true)
+            
+            expect(@l3.extraerstart).to eq(@bib1)
+            expect(@l3.extraerstart).to eq(@bib2)
+            expect(@l3.extraerstart).to eq(@bib3)
+            expect(@l3.extraerstart).to eq(@bib4)
+            expect(@l3.extraerstart).to eq(@bib5)
         end
     end
-    
-    describe "Insertar mas de un elemento en la cola" do
-        it "Podemos insertar mas de un elemento en la cola" do
-            
-            expect(@cola3.insertar(@bib1)).to eq(true)
-            expect(@cola3.insertar(@bib2)).to eq(true)
-            expect(@cola3.insertar(@bib3)).to eq(true)
-            expect(@cola3.insertar(@bib4)).to eq(true)
-            expect(@cola3.insertar(@bib5)).to eq(true)
-        end
+end
+
+describe Libro do
+    before :all do
+        @lib1 = Libro.new('David Chelimsky', 'The RSpecBook: Behaviour Driven Development with RSpec, Cucumber, and Friends', 'The Facets of Ruby', 'Pragmatic Bookshelf', '1', 'December 25 2010', ['1934356379','9781934356371'])
     end
     
-    describe "Se deberia poder extraer mas de un elemento de la cola" do
-        it "Podemos extraer mas de un elemento de la cola" do
-            
-            expect(@cola3.insertar(@bib1)).to eq(true)
-            expect(@cola3.insertar(@bib2)).to eq(true)
-            expect(@cola3.insertar(@bib3)).to eq(true)
-            expect(@cola3.insertar(@bib4)).to eq(true)
-            expect(@cola3.insertar(@bib5)).to eq(true)
-            
-            expect(@cola3.extraer).to eq(@bib1)
-            expect(@cola3.extraer).to eq(@bib2)
-            expect(@cola3.extraer).to eq(@bib3)
-            expect(@cola3.extraer).to eq(@bib4)
-            expect(@cola3.extraer).to eq(@bib5)
+    describe "/ Pruebas " do
+        it "Instancia" do
+           expect(@lib1.instance_of?Libro).to eq(true)
+        end
+        it "Bibliografia" do
+            expect(@lib1.is_a?Bibliografia).to eq(true)
+        end
+        it "Object" do
+            expect(@lib1.is_a?Object).to eq(true)
+        end
+        it "BasicObject" do
+            expect(@lib1.is_a?BasicObject).to eq(true)
+        end
+        it "Responder a metodo de madre" do
+            expect(@lib1.respond_to?(:x)).to eq(true)
         end
     end
 end
