@@ -204,5 +204,8 @@ describe Electronico do
         it "BasicObject" do
             expect(@electronico.is_a?BasicObject).to eq(true)
         end
+        it "Tipo" do
+            expect(@electronico.respond_to?:isbnlibro).to eq(false)
+        end
     end
 end
