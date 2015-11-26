@@ -169,6 +169,9 @@ describe Lista do
             expect(@l4.detect {|i| i == 1}).to eq(1)
             expect(@l4.find {|i| i == 1}).to eq(1)
         end
+        it "comprobrando drop" do
+            expect(@l4.drop(4)).to eq([1])
+        end
     end
     
     
