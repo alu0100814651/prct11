@@ -1,3 +1,4 @@
+# encoding: UTF-8
 require 'spec_helper'
 require 'nitz/codigo'
 require 'nitz/libreria_lista'
