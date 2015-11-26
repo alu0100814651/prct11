@@ -170,7 +170,8 @@ describe Lista do
             expect(@l4.find {|i| i == 1}).to eq(1)
         end
         it "comprobrando drop" do
-            expect(@l4.drop(4)).to eq([1])
+            expect(@l4.drop(3)).to eq([4, 5])
+            expect(@l4.drop(1)).to eq([2,3,4,5])
         end
     end
     
