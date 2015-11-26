@@ -165,6 +165,10 @@ describe Lista do
         it "comprobrando el metodo count" do
             expect(@l4.count).to eq(5)
         end
+        it "comprobrando el metodo detect" do
+            expect(@l4.detect {|i| i == 1}).to eq(1)
+            expect(@l4.find {|i| i == 1}).to eq(1)
+        end
     end
     
     
