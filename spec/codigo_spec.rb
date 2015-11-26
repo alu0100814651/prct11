@@ -5,7 +5,7 @@ require 'nitz/libreria_lista'
 
 describe Biblio do
     before :each do
-        @obj1 = Biblio.new('Dave Thomas', 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'The Facets of Ruby', 'Pragmatic Bookshelf', '4', 'July 7, 2013', ['ISBN-13: 978-1937785499', 'ISBN-10: 1937785491'])
+        @obj1 = Biblio.new('Dave Thomas', 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide', 'The Facets of Ruby', 'Pragmatic Bookshelf', '4', 'July 7, 2013', ['ISBN-13: 978-1937785499', 'ISBN-10: 1937785491'])
     end
     
     describe "Primer Conjunto de Pruebas" do
@@ -13,7 +13,7 @@ describe Biblio do
             @obj1.autor.should eq('Dave Thomas')
         end
         it "Tiene que existir un titulo" do
-            @obj1.titulo.should eq('Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide')
+            @obj1.titulo.should eq('Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide')
         end
         it "Tiene que existir o no una serie" do
             @obj1.serie.should eq('The Facets of Ruby')
@@ -39,7 +39,7 @@ describe Biblio do
          @obj1.obtenautor.should == ('Dave Thomas')
      end
      it "Existe un metodo para obtener el titulo" do 
-         @obj1.obtentitulo.should == ('Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide')
+         @obj1.obtentitulo.should == ('Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide')
      end
      it "Existe un metodo para obtener la serie" do 
          @obj1.obtenserie.should == ('The Facets of Ruby')
@@ -57,7 +57,7 @@ describe Biblio do
      @obj1.obtenisbn.should == (['ISBN-13: 978-1937785499', 'ISBN-10: 1937785491'])
      end
      it "Existe un metodo para obtener la referencia formateada" do
-         @obj1.to_s.should == ("Autor: Dave Thomas, Titulo: Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide, Serie: The Facets of Ruby, Editorial: Pragmatic Bookshelf, 4 Edicion, Fecha de Publicacion: July 7, 2013 y ISBN: [\"ISBN-13: 978-1937785499\", \"ISBN-10: 1937785491\"]")
+         @obj1.to_s.should == ("Autor: Dave Thomas, Titulo: Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide, Serie: The Facets of Ruby, Editorial: Pragmatic Bookshelf, 4 Edicion, Fecha de Publicacion: July 7, 2013 y ISBN: [\"ISBN-13: 978-1937785499\", \"ISBN-10: 1937785491\"]")
      end
     end
 end
@@ -65,9 +65,9 @@ end
 describe Lista do
     before :each do
         
-        @bib1 = Biblio.new('Dave Thomas', 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'The Facets of Ruby', 'Pragmatic Bookshelf', '4', 'July 7 2013', ['9781937785499','1937785491'])
+        @bib1 = Biblio.new('Dave Thomas', 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide', 'The Facets of Ruby', 'Pragmatic Bookshelf', '4', 'July 7 2013', ['9781937785499','1937785491'])
         @bib2 = Biblio.new('Scott Chacon', 'Pro Git 2009th Edition', 'Pro', 'Apress', '2009', 'August 27 2009', ['9781430218333','1430218339'])
-        @bib3 = Biblio.new('David Flanagan', 'The Ruby', 'Programming Language', 'O’Reilly Media', '1', 'February 4 2008', ['0596516177','9780596516178'])
+        @bib3 = Biblio.new('David Flanagan', 'The Ruby', 'Programming Language', 'OReilly Media', '1', 'February 4 2008', ['0596516177','9780596516178'])
         @bib4 = Biblio.new('David Chelimsky', 'The RSpecBook: Behaviour Driven Development with RSpec, Cucumber, and Friends', 'The Facets of Ruby', 'Pragmatic Bookshelf', '1', 'December 25 2010', ['1934356379','9781934356371'])
         @bib5 = Biblio.new('Richard E. Silverman','Git', 'Pocket Guide', 'O’Reilly Media', '1', 'August 2 2013', ['1449325866','9781449325862'])
         @bib6 = Biblio.new('David Chelimsky', 'The RSpecBook: Behaviour Driven Development with RSpec, Cucumber, and Friends', 'The Facets of Ruby', 'Pragmatic Bookshelf', '4', 'December 25 2010', ['1934356379','9781934356371'])
