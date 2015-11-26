@@ -162,6 +162,9 @@ describe Lista do
             expect(@l4.map{|i| i*i}).to eq([1,4, 9, 16, 25])
             expect(@l4.collect{|i| i*i}).to eq([1,4, 9, 16, 25])
         end
+        it "comprobrando el metodo count" do
+            expect(@l4.count).to eq(2)
+        end
     end
     
     
