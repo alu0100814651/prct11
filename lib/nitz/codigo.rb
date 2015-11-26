@@ -1,4 +1,5 @@
 class Biblio
+    include Comparable
     attr_reader :autor, :titulo, :serie, :editorial, :edicion, :fecha, :isbn
     def initialize (x, y, z, a, b, c, d)
         @autor = x
@@ -8,6 +9,10 @@ class Biblio
         @edicion = b
         @fecha = c
         @isbn = d
+    end
+    
+    def <=> (other)
+        @edicion <=> other.edicion
     end
     
     def obtenautor

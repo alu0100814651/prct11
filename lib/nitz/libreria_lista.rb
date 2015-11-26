@@ -1,6 +1,7 @@
 Nodo = Struct.new(:value,:next,:prev)
 
 class Lista
+    include Enumerable
     attr_reader :start, :finish
     
     def initialize()
@@ -8,6 +9,14 @@ class Lista
         @finish = nil
     end
     
+    def each 
+        abcd = @start
+        while abcd != nil do
+            yield abcd.value
+            abcd = abcd.next
+        end
+    end
+         
     def vacia
         if (@start == nil)
             return true

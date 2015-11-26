@@ -34,7 +34,7 @@ describe Biblio do
     
     describe "Metodos" do
   
-    it "Existe un metodo para obtener el autor" do 
+     it "Existe un metodo para obtener el autor" do 
          @obj1.obtenautor.should == ('Dave Thomas')
      end
      it "Existe un metodo para obtener el titulo" do 
@@ -58,21 +58,29 @@ describe Biblio do
      it "Existe un metodo para obtener la referencia formateada" do
          @obj1.to_s.should == ("Autor: Dave Thomas, Titulo: Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide, Serie: The Facets of Ruby, Editorial: Pragmatic Bookshelf, 4 Edicion, Fecha de Publicacion: July 7, 2013 y ISBN: [\"ISBN-13: 978-1937785499\", \"ISBN-10: 1937785491\"]")
      end
-  end
+    end
 end
 
 describe Lista do
     before :each do
         
-        @bib1 = Biblio.new('Dave Thomas', 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'The Facets of Ruby', 'Pragmatic Bookshelf', '4', 'July 7 2013', ['9781937785499', '1937785491'])
+        @bib1 = Biblio.new('Dave Thomas', 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'The Facets of Ruby', 'Pragmatic Bookshelf', '4', 'July 7 2013', ['9781937785499','1937785491'])
         @bib2 = Biblio.new('Scott Chacon', 'Pro Git 2009th Edition', 'Pro', 'Apress', '2009', 'August 27 2009', ['9781430218333','1430218339'])
         @bib3 = Biblio.new('David Flanagan', 'The Ruby', 'Programming Language', 'O’Reilly Media', '1', 'February 4 2008', ['0596516177','9780596516178'])
         @bib4 = Biblio.new('David Chelimsky', 'The RSpecBook: Behaviour Driven Development with RSpec, Cucumber, and Friends', 'The Facets of Ruby', 'Pragmatic Bookshelf', '1', 'December 25 2010', ['1934356379','9781934356371'])
         @bib5 = Biblio.new('Richard E. Silverman','Git', 'Pocket Guide', 'O’Reilly Media', '1', 'August 2 2013', ['1449325866','9781449325862'])
+        @bib6 = Biblio.new('David Chelimsky', 'The RSpecBook: Behaviour Driven Development with RSpec, Cucumber, and Friends', 'The Facets of Ruby', 'Pragmatic Bookshelf', '4', 'December 25 2010', ['1934356379','9781934356371'])
         
         @l1 = Lista.new()
         @l2 = Lista.new()
         @l3 = Lista.new()
+        @l4 = Lista.new()
+        @l4.insertarfinish(1)
+        @l4.insertarfinish(2)
+        @l4.insertarfinish(3)
+        @l4.insertarfinish(4)
+        @l4.insertarfinish(5)
+
     end
     
     describe "Creamos una lista" do
@@ -121,6 +129,42 @@ describe Lista do
             expect(@l3.extraerstart).to eq(@bib5)
         end
     end
+    
+    describe "Comparable" do
+      it "menor que" do
+        expect(@bib3<@bib1).to eq(true)
+      end
+      it "menor o igual que" do
+        expect(@bib3<=@bib5).to eq(true)
+      end
+      it "mayor que" do
+        expect(@bib1>@bib3).to eq(true)
+      end
+      it "mayor o igual que" do
+        expect(@bib1>=@bib6).to eq(true)
+      end
+      it "igual que" do
+        expect(@bib1==@bib1).to eq(true)
+      end
+      it "distinto de" do
+        expect(@bib1==@bib4).to eq(false)
+      end
+    end
+    
+    describe "Enumerable" do
+        it "comprobrando el metodo all? con un bloque vacio" do
+            expect(@l4.all?).to eq(true)
+        end
+        it "comprobrando el metodo any?" do
+            expect(@l4.any?).to eq(true)
+        end
+        it "comprobrando el metodo collect" do
+            expect(@l4.map{|i| i*i}).to eq([1,4, 9, 16, 25])
+            expect(@l4.collect{|i| i*i}).to eq([1,4, 9, 16, 25])
+        end
+    end
+    
+    
 end
 
 describe Libro do

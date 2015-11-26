@@ -6,5 +6,5 @@ RSpec::Core::RakeTask.new
 
 desc "Ejecutar las espectativas de la clase Biblio"
 task :nitz do
-  sh "rspec -I. spec/codigo_pruebas.rb"
+  sh "rspec -I. spec/codigo_spec.rb"
 end  
