@@ -173,6 +173,15 @@ describe Lista do
             expect(@l4.drop(3)).to eq([4, 5])
             expect(@l4.drop(1)).to eq([2,3,4,5])
         end
+        it "comprobrando max" do
+            expect(@l4.max).to eq(5)
+        end
+        it "comprobrando min" do
+            expect(@l4.min).to eq(1)
+        end
+        it "comprobrando sort" do
+            expect(@l4.sort).to eq([1,2,3,4,5])
+        end
     end
     
     
