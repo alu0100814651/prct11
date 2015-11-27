@@ -88,6 +88,10 @@ describe Lista do
         @l5.insertarfinish(3)
         @l5.insertarfinish(1)
         @l5.insertarfinish(0)
+        
+        @l6 = Lista.new()
+        @l6.insertarfinish(@bib1)
+        @l6.insertarfinish(@bib2)
 
     end
     
@@ -162,9 +166,13 @@ describe Lista do
     describe "Enumerable" do
         it "comprobrando el metodo all? con un bloque vacio" do
             expect(@l4.all?).to eq(true)
+            
+            expect(@l6.all?).to eq(true)
         end
         it "comprobrando el metodo any?" do
             expect(@l4.any?).to eq(true)
+            
+            expect(@l6.any?).to eq(true)
         end
         it "comprobrando el metodo collect" do
             expect(@l4.map{|i| i*i}).to eq([1, 4, 9, 16, 25])
@@ -177,6 +185,8 @@ describe Lista do
             expect(@l4.count).to eq(5)
             
             expect(@l5.count).to eq(4)
+            
+            expect(@l6.count).to eq(2)
         end
         it "comprobrando el metodo detect" do
             expect(@l4.detect {|i| i == 1}).to eq(1)
@@ -188,6 +198,7 @@ describe Lista do
         it "comprobrando drop" do
             expect(@l4.drop(3)).to eq([4, 5])
             expect(@l4.drop(1)).to eq([2,3,4,5])
+            expect(@l6.drop(2)).to eq([])
         end
         it "comprobrando max" do
             expect(@l4.max).to eq(5)
