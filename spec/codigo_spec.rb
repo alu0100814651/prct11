@@ -86,7 +86,7 @@ describe Lista do
         @l5 = Lista.new()
         @l5.insertarfinish(10)
         @l5.insertarfinish(3)
-        @l5.insertarfinish(3)
+        @l5.insertarfinish(1)
         @l5.insertarfinish(0)
 
     end
@@ -170,8 +170,8 @@ describe Lista do
             expect(@l4.map{|i| i*i}).to eq([1, 4, 9, 16, 25])
             expect(@l4.collect{|i| i*i}).to eq([1, 4, 9, 16, 25])
             
-            expect(@l5.map{|i| i+i}).to eq([20, 6, 6, 0])
-            expect(@l5.collect{|i| i+i}).to eq([20, 6, 6, 0])
+            expect(@l5.map{|i| i+i}).to eq([20, 6, 2, 0])
+            expect(@l5.collect{|i| i+i}).to eq([20, 6, 2, 0])
         end
         it "comprobrando el metodo count" do
             expect(@l4.count).to eq(5)
@@ -197,6 +197,7 @@ describe Lista do
         end
         it "comprobrando sort" do
             expect(@l4.sort).to eq([1,2,3,4,5])
+            expect(@l5.sort).to eq([0,1,3,10])
         end
     end
     
