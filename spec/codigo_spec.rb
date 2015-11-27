@@ -75,12 +75,19 @@ describe Lista do
         @l1 = Lista.new()
         @l2 = Lista.new()
         @l3 = Lista.new()
+        
         @l4 = Lista.new()
         @l4.insertarfinish(1)
         @l4.insertarfinish(2)
         @l4.insertarfinish(3)
         @l4.insertarfinish(4)
         @l4.insertarfinish(5)
+        
+        @l5 = Lista.new()
+        @l5.insertarfinish(10)
+        @l5.insertarfinish(3)
+        @l5.insertarfinish(3)
+        @l5.insertarfinish(0)
 
     end
     
@@ -160,15 +167,23 @@ describe Lista do
             expect(@l4.any?).to eq(true)
         end
         it "comprobrando el metodo collect" do
-            expect(@l4.map{|i| i*i}).to eq([1,4, 9, 16, 25])
-            expect(@l4.collect{|i| i*i}).to eq([1,4, 9, 16, 25])
+            expect(@l4.map{|i| i*i}).to eq([1, 4, 9, 16, 25])
+            expect(@l4.collect{|i| i*i}).to eq([1, 4, 9, 16, 25])
+            
+            expect(@l5.map{|i| i+i}).to eq([20, 6, 6, 0])
+            expect(@l5.collect{|i| i+i}).to eq([20, 6, 6, 0])
         end
         it "comprobrando el metodo count" do
             expect(@l4.count).to eq(5)
+            
+            expect(@l5.count).to eq(4)
         end
         it "comprobrando el metodo detect" do
             expect(@l4.detect {|i| i == 1}).to eq(1)
             expect(@l4.find {|i| i == 1}).to eq(1)
+            
+            expect(@l5.detect {|i| i == 3}).to eq(3)
+            expect(@l5.find {|i| i == 3}).to eq(2)
         end
         it "comprobrando drop" do
             expect(@l4.drop(3)).to eq([4, 5])
