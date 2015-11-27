@@ -183,7 +183,7 @@ describe Lista do
             expect(@l4.find {|i| i == 1}).to eq(1)
             
             expect(@l5.detect {|i| i == 3}).to eq(3)
-            expect(@l5.find {|i| i == 3}).to eq(2)
+            expect(@l5.find {|i| i == 3}).to eq(3)
         end
         it "comprobrando drop" do
             expect(@l4.drop(3)).to eq([4, 5])
