@@ -5,26 +5,28 @@ class APA
     include Comparable
     attr_reader :bibliog, :nombre
     def initialize (biblio)
-        @bilbiog = biblio
+        @bibliog = biblio
     end
     
     def nomape
-        tam = @bibliog.x.length
-        for var in 1..tam-1
-            mensaje = "#{mensaje}"+"Autor, #{@o.ap[var][0]}. #{@o.x[var][0]}. &"
+        tam = @bibliog.autor.length
+        i = 0
+        for i in 0..tam-2
+            mensaje = "#{mensaje}"+"Autor, #{@bibliog.apellido[i][0]}. #{@bibliog.autor[i][0]}. & "
         end
-        mensaje = "#{mensaje}"+"Autor, #{@o.ap[tam][0]}. #{@o.x[tam][0]}."
+        i=i+1
+        mensaje = "#{mensaje}"+"Autor, #{@bibliog.apellido[i][0]}. #{@bibliog.autor[i][0]}."
     end
     
     def <=> (other)n 1
-        if(@o.ap == other.ap)
-            if(@o.s == other.s)
-               @o.y <=> other.y
+        if(@bibliog.apellido == other.apellido)
+            if(@bibliog.fecha == other.fecha)
+               @bibliog.titulo <=> other.titulo
             else
-                @o.s <=> other.s
+                @bibliog.fecha <=> other.fecha
             end
         else
-            @o.ap <=> ohter.ap
+            @bibliog.apellido <=> ohter.apellido
         end
     end
     
