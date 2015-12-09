@@ -62,8 +62,8 @@ end
 class Revista < Biblio
     attr_reader :issn
     
-    def initialize (x, y, z, a, b, c, d)
-        super(x, y, z, a, b, c, d)
+    def initialize (x, ap, y, z, a, b, c, d)
+        super(x, ap, y, z, a, b, c, d)
         @issn=d
     end
     

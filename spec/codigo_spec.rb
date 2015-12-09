@@ -7,7 +7,9 @@ describe APA do
     before :all do
          @biblio1 = Biblio.new(['Dave', 'Andy'], ['Thomas', 'Hunt'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4, 'July 7 2013', ['9781937785499', '1937785491'], 'The Facets of Ruby')
          @biblio2 = Biblio.new(['Nitesh'],['Gul'],'Cloud9', 'LPP', 1404, 'December 9 2015' ,['9781937785499', '1937785491'], 'The Facets of Ruby')
+         @revista1 = Revista.new(['Dave', 'Andy'], ['Thomas', 'Hunt'], 'programming ruby', 'Pragmatic Bookshelf', 4, 'July 7 2013', ['9781937785499', '1937785491'], 'The Facets of Ruby')
          @apa1 = APA.new(@biblio1)
+         @apa2 = APA.new(@revista1)
          @l1 = Lista.new()
     end
     
@@ -22,7 +24,11 @@ describe APA do
             expect(@l1.extraerstart).to eq(@biblio2)
             expect(@l1.extraerstart).to eq(@biblio1)
         end
-        
     end
     
+    describe "comprobando las mayusculas" do
+        it "mayuscula (la primera letra de cada palabra del título)" do
+            expect(@apa2.get_titulo).to eq('Programming Ruby')
+        end
+    end
 end
