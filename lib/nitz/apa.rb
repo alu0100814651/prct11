@@ -35,14 +35,12 @@ class APA
     end
     
     def get_titulo
-        size = @bibliog.titulo.length
+        lent = @bibliog.titulo.length
         @bibliog.titulo[0] = @bibliog.titulo[0].capitalize
-        i=0
-        while i < size
-            if (@bibliog.titulo[i] == " ")
-                bibliog.titulo[i+1] = bibliog.titulo[i+1].capitalize
+        for var in 0..lent-1
+            if (@bibliog.titulo[var] == " ")
+                bibliog.titulo[var+1] = bibliog.titulo[var+1].capitalize
             end
-            i = i+1
         end
         @bibliog.titulo
     end
