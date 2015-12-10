@@ -1,7 +1,7 @@
 require 'nitz/codigo.rb'
 require 'nitz/libreria_lista.rb'
 require 'nitz/apa.rb'
-require 'spec_helper'
+require 'spec_helper.rb'
 
 describe APA do
     before :all do
