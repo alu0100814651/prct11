@@ -22,15 +22,15 @@ class APA
         end
     end
     
-    def <=> (other)n 1
-        if(@bibliog.apellido == other.apellido)
-            if(@bibliog.fecha == other.fecha)
-               @bibliog.titulo <=> other.titulo
+    def <=> (other)
+        if(@bibliog.apellido == other.bibliog.apellido)
+            if(@bibliog.fecha == other.bibliog.fecha)
+               @bibliog.titulo <=> other.bibliog.titulo
             else
-                @bibliog.fecha <=> other.fecha
+                @bibliog.fecha <=> other.bibliog.fecha
             end
         else
-            @bibliog.apellido <=> ohter.apellido
+            @bibliog.apellido <=> other.bibliog.apellido
         end
     end
     
