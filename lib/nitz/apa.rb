@@ -8,7 +8,7 @@ class APA
         @bibliog = biblio
     end
     
-    def nomape
+    def name
         tam = @bibliog.autor.length
         i = 0
         if(tam == 1)

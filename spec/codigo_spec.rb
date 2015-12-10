@@ -23,10 +23,10 @@ describe APA do
     
     describe "pruebas" do
         it "Nombre y apellido (diversos autores)" do
-           expect(@apa1.nomape).to eq("Autor, T. D. & Autor, H. A.")
+           expect(@apa1.name).to eq("Autor, T. D. & Autor, H. A.")
         end
         it "Nombre y apellido (un solo autor)" do
-           expect(@apa4.nomape).to eq("Autor, C. S.")
+           expect(@apa4.name).to eq("Autor, C. S.")
         end
         it "Ordenar" do
             expect(@todos.insertar(@apa1)).to eq(true)
@@ -42,6 +42,12 @@ describe APA do
     describe "comprobando las mayusculas" do
         it "mayuscula (la primera letra de cada palabra del título)" do
             expect(@apa6.get_titulo).to eq('Noticias')
+        end
+    end
+    
+    describe "comprobando el formato" do
+        it "formato" do
+            expect(@apa3.name).to eq(['Nitesh'],['Gul'],'Cloud9', 'LPP', 1404, 'December 9 2015', ['9781937785499', '1937785491'], 'The Facets of Ruby')
         end
     end
 end
