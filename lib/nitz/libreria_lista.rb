@@ -75,3 +75,22 @@ class Lista
         end
     end
 end
+
+class Orden
+    attr_accessor :list, :ordenacion
+     
+    def initialize
+        @list = Lista.new()
+    end
+    
+    def insertar(a)
+        aux = @list.insertarfinish(a)
+        @ordenacion = @list.sort
+        aux
+    end
+    
+    def extraer
+        @list.extraerstart
+    end
+    
+end

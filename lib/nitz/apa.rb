@@ -11,11 +11,15 @@ class APA
     def nomape
         tam = @bibliog.autor.length
         i = 0
-        for i in 0..tam-2
-            mensaje = "#{mensaje}"+"Autor, #{@bibliog.apellido[i][0]}. #{@bibliog.autor[i][0]}. & "
+        if(tam == 1)
+            mensaje = "#{mensaje}"+"Autor, #{@bibliog.apellido[i][0]}. #{@bibliog.autor[i][0]}."
+        else
+            for i in 0..tam-2
+                mensaje = "#{mensaje}"+"Autor, #{@bibliog.apellido[i][0]}. #{@bibliog.autor[i][0]}. & "
+            end
+            i=i+1
+            mensaje = "#{mensaje}"+"Autor, #{@bibliog.apellido[i][0]}. #{@bibliog.autor[i][0]}."
         end
-        i=i+1
-        mensaje = "#{mensaje}"+"Autor, #{@bibliog.apellido[i][0]}. #{@bibliog.autor[i][0]}."
     end
     
     def <=> (other)n 1
