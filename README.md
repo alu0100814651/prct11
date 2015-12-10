@@ -1,4 +1,4 @@
-<img src="https://coveralls.io/repos/alu0100814651/prct10/badge.svg?branch=master&service=github" alt="Coverage Status" />
+{<img src="https://coveralls.io/repos/alu0100814651/prct10/badge.svg?branch=master&service=github" alt="Coverage Status" />}[https://coveralls.io/github/alu0100814651/prct10?branch=master]
 
 # Nitz
 
