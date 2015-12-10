@@ -47,7 +47,7 @@ describe APA do
     
     describe "comprobando el formato" do
         it "formato" do
-            expect(@apa2.to_s).to eq('Autor, F. D. (December 15 2015). Titulo: Revista Prueba (0596586177). Publicacion: Probando.')
+            expect(@apa2.to_s).to eq('Nombre del (los) Autor(es): Autor, F. D.; Fecha de publicacion: December 15 2015; Titulo: Revista Prueba; Edicion: 0596586177; Publicacion: Probando.')
         end
     end
 end
