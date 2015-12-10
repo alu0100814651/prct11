@@ -49,7 +49,7 @@ class APA
     
     def to_s
         if @bibliog.instance_of?Revista
-            bibli = "Nombre del (los) Autor(es): #{name}; Fecha de publicacion: #{@bibliog.fecha}; Titulo: #{@bibliog.titulo}; Edicion: #{@bibliog.edicion}; Publicacion: #{@bibliog.serie}."
+            "Nombre del (los) Autor(es): #{name}; Fecha de publicacion: #{@bibliog.fecha}; Titulo: #{@bibliog.titulo}; Edicion: #{@bibliog.edicion}; Publicacion: #{@bibliog.serie}."
         end
     end
 end
