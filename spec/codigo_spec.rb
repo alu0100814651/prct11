@@ -47,7 +47,7 @@ describe APA do
     
     describe "comprobando el formato" do
         it "formato" do
-            expect(@apa3.name).to eq(['Nitesh'],['Gul'],'Cloud9', 'LPP', 1404, 'December 9 2015', ['9781937785499', '1937785491'], 'The Facets of Ruby')
+            expect(@apa2.to_s).to eq('Autor, F. D. (December 15 2015). Titulo: Revista Prueba (0596586177). Publicacion: Probando.')
         end
     end
 end

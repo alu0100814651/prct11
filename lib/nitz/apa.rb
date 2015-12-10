@@ -46,4 +46,12 @@ class APA
         end
         @bibliog.titulo
     end
+    
+    def to_s
+        if @bibliog.instance_of?Revista
+            bibli = "#{name} (#{@bibliog.fecha}). "
+            bibli = "#{bibli}"+"Titulo: #{@bibliog.titulo} (#{@bibliog.edicion}). "
+            bibli = "#{bibli}"+"Publicacion: #{@bibliog.serie}."
+        end
+    end
 end
