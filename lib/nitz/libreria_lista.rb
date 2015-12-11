@@ -3,6 +3,8 @@ Nodo = Struct.new(:value,:next,:prev)
 class Lista
     include Enumerable
     attr_reader :start, :finish
+    attr_accessor :list, :ordenacion
+
     
     def initialize()
         @start = nil
@@ -23,6 +25,12 @@ class Lista
         else
             return false
         end
+    end
+    
+    def insertar(vall)
+        aux = insertarfinish(vall)
+        @ordenacion = self.sort
+        aux
     end
     
     def insertarstart(vall)
@@ -74,23 +82,4 @@ class Lista
             return vall
         end
     end
-end
-
-class Orden
-    attr_accessor :list, :ordenacion
-     
-    def initialize
-        @list = Lista.new()
-    end
-    
-    def insertar(a)
-        aux = @list.insertarfinish(a)
-        @ordenacion = @list.sort
-        aux
-    end
-    
-    def extraer
-        @list.extraerstart
-    end
-    
 end

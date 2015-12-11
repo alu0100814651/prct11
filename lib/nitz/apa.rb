@@ -34,7 +34,7 @@ class APA
         end
     end
     
-    def get_titulo
+    def titulo
         lent = @bibliog.titulo.length
         @bibliog.titulo[0] = @bibliog.titulo[0].capitalize
         for var in 0..lent-1

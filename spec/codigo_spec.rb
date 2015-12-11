@@ -18,7 +18,7 @@ describe APA do
          @apa5 = APA.new(@biblio4)
          @apa6 = APA.new(@periodico1)
          @lista1 = Lista.new()
-         @todos = Orden.new()
+         @todos = Lista.new()
     end
     
     describe "pruebas de nombre y apellidos, y ordenacion" do
@@ -43,7 +43,7 @@ describe APA do
     
     describe "comprobando las mayusculas" do
         it "mayuscula (la primera letra de cada palabra del título)" do
-            expect(@apa6.get_titulo).to eq('Noticias Nuevas Y Viejas')
+            expect(@apa6.titulo).to eq('Noticias Nuevas Y Viejas')
         end
     end
     
