@@ -18,6 +18,7 @@ describe APA do
          @apa5 = APA.new(@biblio4)
          @apa6 = APA.new(@periodico1)
          @lista1 = Lista.new()
+         @lista2 = Lista.new()
          @todos = Lista.new()
     end
     
@@ -54,8 +55,16 @@ describe APA do
         it "formato" do
             expect(@apa2.to_s).to eq('Nombre del (los) Autor(es): Autor, F. D.; Fecha de publicacion: December 15 2015; Titulo: Revista Prueba; Edicion: 0596586177; Publicacion: Probando.')
         end
-        it "otro formato" do
-            expect(@apa6.to_s).to eq('Nombre del (los) Autor(es): Autor, R. M.; Fecha de publicacion: December 10 2015; Titulo: noticias nuevas y viejas; Edicion: 9781937785499; Publicacion: Avisos.')
+    end
+    
+    describe "count" do
+        it "metodo count" do
+            expect(@lista2.insertar(@apa1)).to eq(true)
+            expect(@lista2.insertar(@apa2)).to eq(true)
+            expect(@lista2.insertar(@apa3)).to eq(true)
+            expect(@lista2.insertar(@apa4)).to eq(true)
+            expect(@lista2.insertar(@apa5)).to eq(true)
+            expect(@lista2.count).to eq(5)
         end
     end
 end
