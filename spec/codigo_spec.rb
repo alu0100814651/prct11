@@ -10,7 +10,7 @@ describe APA do
          @biblio3 = Biblio.new(['Scott'],['Chacon'], 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27 2000', ['9781430218333','1430218339'], 'Pro')
          @biblio4 = Biblio.new(['Scott'],['Chacon'], 'Apple', 'Antigeno', 2009, 'August 27 2000', ['9781430218333','1430218339'], 'Pro')
          @revista1 = Revista.new(['David'],['Flanagan'], 'Revista Prueba', 'Probando', 1, '0596586177', 'December 15 2015', 1)
-         @periodico1 = Periodico.new(['Maria'], ['Rgez'], 'noticias nuevas y viejas', 'Avisos', 105, ['9781937785499', '1937785491'], 'December 10 2015', 2015)
+         @periodico1 = Periodico.new(['Maria'], ['Rgez'], 'noticias nuevas y viejas', 'Avisos', 105, '9781937785499', 'December 10 2015', 2015)
          @apa1 = APA.new(@biblio1)
          @apa2 = APA.new(@revista1)
          @apa3 = APA.new(@biblio2)
@@ -53,6 +53,9 @@ describe APA do
     describe "comprobando el formato" do
         it "formato" do
             expect(@apa2.to_s).to eq('Nombre del (los) Autor(es): Autor, F. D.; Fecha de publicacion: December 15 2015; Titulo: Revista Prueba; Edicion: 0596586177; Publicacion: Probando.')
+        end
+        it "otro formato" do
+            expect(@apa6.to_s).to eq('Nombre del (los) Autor(es): Autor, R. M.; Fecha de publicacion: December 10 2015; Titulo: noticias nuevas y viejas; Edicion: 9781937785499; Publicacion: Avisos.')
         end
     end
 end
