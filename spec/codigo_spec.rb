@@ -45,6 +45,9 @@ describe APA do
         it "mayuscula (la primera letra de cada palabra del título)" do
             expect(@apa6.titulo).to eq('Noticias Nuevas Y Viejas')
         end
+        it "probando también si uno YA ESTÁ capitalizado, lo lee correctamente" do
+            expect(@apa5.titulo).to eq('Apple')
+        end
     end
     
     describe "comprobando el formato" do
