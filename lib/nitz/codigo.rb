@@ -2,16 +2,10 @@ class Biblio
     include Comparable
     attr_reader :autor, :apellido, :titulo, :serie, :editorial, :edicion, :fecha, :isbn
     
-    def initialize(name, &block)
-    self.name = name
-
-    if block_given?  
-      if block.arity == 1
-        yield self
-      else
-       instance_eval &block 
-      end
-    end
+    def initialize(&block)
+        if block_given?  
+            instance_eval &block
+        end
     end
     
     def <=> (other)
@@ -52,10 +46,9 @@ class Biblio
 end
 
 class Libro < Biblio
-    attr_accessor :serie, :editorial, :edicion, :isbn
+    attr_accessor :isbn
     
-    def initialize (titulo, &bloque)
-       super(titulo)
+    def initialize (&block)
        if block_given?  
         if block.arity == 1
             yield self
@@ -63,36 +56,19 @@ class Libro < Biblio
             instance_eval &block 
         end
        end
-    end
+    end  
     
-    def serie(name)
-        @serie = name
-    end    
-    
-    def editorial(name)
-        @editorial = name
-    end    
-    
-    def edicion(number_of_edition)
-        @edicion = number_of_edition 
-    end    
-    
-    def isbn(number_of_isbn)
-        @isbn = number_of_isbn 
+    def isbn(isbn)
+        @isbn = isbn 
     end    
 end
 
 class Revista < Biblio
     attr_accessor :revista, :paginas
     
-    def initialize (titulo, &bloque)
-       super(titulo)
+    def initialize (&block)
        if block_given?  
-        if block.arity == 1
-            yield self
-        else
-            instance_eval &block 
-        end
+        instance_eval &block 
        end
     end
     
@@ -109,37 +85,23 @@ end
 class Periodico < Biblio
     attr_reader :periodico, :pag
     
-    def initialize (titulo, &bloque)
-       super(titulo)
-       if block_given?  
-        if block.arity == 1
-            yield self
-        else
-            instance_eval &block 
-        end
+    def initialize (&block)
+       if block_given?
+        instance_eval &block 
        end
     end
     
     def periodico(name)
         @periodico = name
     end
-    
-    def pag(numbers)
-        @pag = numbers 
-    end
 end
 
 class Electronico < Biblio
     attr_reader :editorial
     
-    def initialize (titulo, &bloque)
-       super(titulo)
-       if block_given?  
-        if block.arity == 1
-            yield self
-        else
-            instance_eval &block 
-        end
+    def initialize (&block)
+       if block_given?
+        instance_eval &block 
        end
     end   
     
