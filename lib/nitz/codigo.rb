@@ -41,7 +41,7 @@ class Biblio
     end
     
     def to_s
-    "Autor: #@autor, Titulo: #@titulo, Serie: #@serie, Editorial: #@editorial, #@edicion Edicion, Fecha de Publicacion: #@fecha y ISBN: #@isbn"
+        "Autor: #@autor, Titulo: #@titulo, Serie: #@serie, Editorial: #@editorial, #@edicion Edicion, Fecha de Publicacion: #@fecha y ISBN: #@isbn"
     end
 end
 
@@ -60,7 +60,11 @@ class Libro < Biblio
     
     def isbn(isbn)
         @isbn = isbn 
-    end    
+    end
+    
+    def to_s
+        "ISBN: #@isbn"
+    end
 end
 
 class Revista < Biblio
@@ -74,12 +78,7 @@ class Revista < Biblio
     
     def revista(name)
         @revista = name
-    end    
-    
-    def paginas(number_of_pages)
-        @paginas = number_of_pages 
     end
-    
 end
 
 class Periodico < Biblio
