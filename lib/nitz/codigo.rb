@@ -79,10 +79,14 @@ class Revista < Biblio
     def revista(name)
         @revista = name
     end
+    
+    def to_s
+        "Revista: #@revista"
+    end
 end
 
 class Periodico < Biblio
-    attr_reader :periodico, :pag
+    attr_reader :periodico
     
     def initialize (&block)
        if block_given?
@@ -92,6 +96,10 @@ class Periodico < Biblio
     
     def periodico(name)
         @periodico = name
+    end
+    
+    def to_s
+        "Periodico: #@periodico"
     end
 end
 
@@ -106,5 +114,9 @@ class Electronico < Biblio
     
     def editorial(name)
         @editorial = name 
+    end
+    
+    def to_s
+        "Electronico: #@editorial"
     end
 end
