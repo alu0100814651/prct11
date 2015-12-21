@@ -44,11 +44,11 @@ describe Lista do
     end
     
     it "comprobar el correcto funcionamiento de Periodico" do
-        expect(@l1.to_s).to eq('Periodico: El Dia')
+        expect(@p1.to_s).to eq('Periodico: El Dia')
     end
     
     it "comprobar el correcto funcionamiento de Electronico" do
-        expect(@l1.to_s).to eq('Electronico: ULL ETSII')
+        expect(@e1.to_s).to eq('Electronico: ULL ETSII')
     end
     
 end
